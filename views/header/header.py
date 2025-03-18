@@ -1,5 +1,5 @@
 import reflex as rx
-# from docutils.parsers.rst.directives.tables import align
+
 from Python_link_bio.components.link_icon import link_icon
 from Python_link_bio.components.info_text import info_text
 from Python_link_bio.styles.styles import Size

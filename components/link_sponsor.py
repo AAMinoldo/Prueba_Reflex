@@ -1,5 +1,4 @@
 import reflex as rx
-import Python_link_bio.styles.styles as styles
 from Python_link_bio.styles.styles import Size as Size
 
 

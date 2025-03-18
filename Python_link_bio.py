@@ -1,6 +1,4 @@
 import reflex as rx
-from reflex.components.el.elements.metadata import style
-
 from Python_link_bio.components.navbar import navbar
 from Python_link_bio.components.footer import footer
 from Python_link_bio.views.header.header import header
@@ -10,8 +8,8 @@ from Python_link_bio.styles.styles import Size as Size
 from Python_link_bio.views.sponsors.sponsors import sponsors
 
 #para backend es State
-class State(rx.State):
-    pass
+# class State(rx.State):
+#     pass
 
 
 def index()-> rx.Component:
@@ -32,10 +30,7 @@ def index()-> rx.Component:
         ),
         rx.center(
             footer())
-
     )
-
-
 
 
 app = rx.App(
@@ -48,5 +43,4 @@ app.add_page(
     description="Hola mi nombre es Aldo",
     image="236.jpg"
 )
-
 
