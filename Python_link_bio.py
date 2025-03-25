@@ -3,7 +3,7 @@ import Python_link_bio.styles.styles as styles
 import Python_link_bio.constants as const
 from Python_link_bio.pages.index import index
 from Python_link_bio.pages.courses import courses
-
+#hola
 
 app = rx.App(
     stylesheets=styles.STYLESHEETS,
