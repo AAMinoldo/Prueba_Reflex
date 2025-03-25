@@ -2,7 +2,7 @@ import reflex as rx
 import Python_link_bio.styles.styles as styles
 from Python_link_bio.styles.styles import Size as Size
 
-def link_button(title: str, body: str, image:str, url: str)-> rx.Component:
+def link_button(title: str, body: str, image:str, url: str, is_external=True)-> rx.Component:
     return rx.link(
         rx.button(
             rx.hstack(
@@ -29,7 +29,7 @@ def link_button(title: str, body: str, image:str, url: str)-> rx.Component:
         ),
         align="center",
         href=url,
-        is_external=True,  # habre una nueva pestaña, para no abondonar nuestra pagina
+        is_external=is_external,  # habre una nueva pestaña, para no abondonar nuestra pagina
         width="100%",
     )
 

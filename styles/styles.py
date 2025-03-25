@@ -21,7 +21,7 @@ class Size(Enum):
     SMALL = "5"
     MEDIUM = "2"
     DEFAULT = "1"
-    BIG = "9"
+    BIG = "8"
     LARGE = "26px"
     SUPERBIG = "50px"
     VERY_BIG = "9"
