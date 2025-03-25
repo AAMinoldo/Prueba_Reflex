@@ -1,0 +1,10 @@
+name: Python_link_bio
+description: 'proyecto de prueba en reflex'
+regions:
+  sjc: 1
+vmtype: c1m1
+hostname: my-app-host
+envfile: .env
+project: Python_link_bio
+packages:
+- procps

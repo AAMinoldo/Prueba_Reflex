@@ -41,4 +41,5 @@ CMD ["reflex", "run", "--env", "prod", "--backend-only"]
 #arranca el contenedor
 #docker run -d -p 8000:8000 --name app aldominoldo-web:latest
 #docker ps
+#hola
 
