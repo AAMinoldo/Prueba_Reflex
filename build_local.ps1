@@ -1,6 +1,6 @@
 #para correrlo en windows powerShell
 # Activar el entorno virtual
-$env:VIRTUAL_ENV = ".\.venv\Scripts\Activate.ps1"
+$env:VIRTUAL_ENV = ".venv\Scripts\Activate.ps1"
 . $env:VIRTUAL_ENV
 
 # Actualizar pip
@@ -14,9 +14,6 @@ Remove-Item -Recurse -Force -Path "public"
 
 # Inicializar Reflex
 reflex init
-
-api_url=https://pruebareflex-production.up.railway.app reflex export --frontend-only
-
 
 # Exportar solo el frontend con Reflex
 reflex export --frontend-only
