@@ -1,4 +1,6 @@
 #para correrlo en windows powerShell remoto
+cd Python_link_bio
+python -m venv .venv
 # Activar el entorno virtual
 $env:VIRTUAL_ENV = ".venv\Scripts\Activate.ps1"
 . $env:VIRTUAL_ENV
