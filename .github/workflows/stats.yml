@@ -24,6 +24,9 @@ jobs:
             
       - name: Run script
         run: python ./Roadmap/stats.py
+
+      - name: Pull changes to ensure up-to-date with remote
+        run: git pull origin main --rebase  # Esto sincroniza tu rama local con la remota
        
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
