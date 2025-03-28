@@ -32,7 +32,7 @@ jobs:
           commit_user_name: Aldo Minoldo [Github-Actions]
           commit_user_email: minoldoaldo@gmail.com
           commit_author: aldo minoldo
-          github_token: ${{ secrets.GITHUB_TOKEN }} 
+          
 
 
         
