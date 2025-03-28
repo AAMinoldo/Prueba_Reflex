@@ -31,7 +31,7 @@ jobs:
           commit_message: Update stats
           commit_user_name: Aldo Minoldo [Github-Actions]
           commit_user_email: minoldoaldo@gmail.com
-          commit_author: aldo minoldo
+          commit_author: "Aldo Minoldo <minoldoaldo@gmail.com>"  # Corregido aquí
           
 
 
