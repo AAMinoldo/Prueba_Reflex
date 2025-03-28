@@ -23,7 +23,7 @@ jobs:
             python-version: '3.13.2' 
             
       - name: Run script
-        run: python Roadmap/stats.py
+        run: python ./Roadmap/stats.py
        
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
