@@ -1,8 +1,12 @@
 name: Stats
 
+# on:   #se ejecuta con cada push
+#   push:
+#     branches: [main]
+
 on:
-  push:
-    branches: [main]
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:     
   build: 
@@ -15,24 +19,27 @@ jobs:
 
     steps:  
       - name: Checkout repo
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup Python
-      - uses: actions/setup-python@v5
+        uses: actions/setup-python@v5
         with:
             python-version: '3.13.2' 
             
       - name: Run script
         run: python ./Roadmap/stats.py
 
+      - name: Pull changes to ensure up-to-date with remote
+        run: git pull origin main --rebase  # Esto sincroniza tu rama local con la remota
+       
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with: 
           commit_message: Update stats
           commit_user_name: Aldo Minoldo [Github-Actions]
           commit_user_email: minoldoaldo@gmail.com
-          commit_author: aldo minoldo
-          github_token: ${{ secrets.GITHUB_TOKEN }} 
+          commit_author: "Aldo Minoldo <minoldoaldo@gmail.com>"  # Corregido aquí
+          
 
 
         
