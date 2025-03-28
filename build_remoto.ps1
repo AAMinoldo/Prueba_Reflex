@@ -1,4 +1,4 @@
-#para correrlo en windows powerShell
+#para correrlo en windows powerShell remoto
 # Activar el entorno virtual
 $env:VIRTUAL_ENV = ".venv\Scripts\Activate.ps1"
 . $env:VIRTUAL_ENV
