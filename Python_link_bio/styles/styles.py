@@ -12,7 +12,8 @@ MAX_WIDTH = "600px"
 #Creo un array
 STYLESHEETS = [
     "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap",
-    "https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap"
+    "https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap",
+    "/css/styles.css"
 ]
 
 #Sizes -tamaños

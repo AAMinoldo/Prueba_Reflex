@@ -6,33 +6,59 @@ import Python_link_bio.constants as const
 from Python_link_bio.routes import Route
 
 
-def index_links()-> rx.Component:
+def index_links(feature=None)-> rx.Component:
+    if feature is None:
+        feature = []
     return rx.vstack(
         title("Comunidad"),
 
-            link_button("Cursos Gratis",
+        link_button("Cursos Gratis",
                     "Consulta de tutoriales***********************************",
                     "/icons/twitch-brands.svg",
                     Route.COURSES.value,
-                        is_external=False,
-                        ),
+                    is_external=False,
+                    ),
 
-            link_button("Twitch******************************************",
-                        "Directos de lunes a viernes***********************************",
-                        "/icons/twitch-brands.svg",
-                        const.TWITCH_URL),
-            link_button("YouTube",
-                        "Tutoriales semanales",
-                        "/icons/twitch-brands.svg",
-                        const.YOUTUBE_URL),
-            link_button("YouTube" "(canal secundario)",
-                        "Tutoriales semanales",
-                        "/icons/twitch-brands.svg",
-                        const.YOUTUBE_SECONDARY_URL),
-            link_button("Discord",
-                        "El chat de la comunidad",
-                        "/icons/twitch-brands.svg",
-                        const.DISCORD_URL),
+        link_button("Twitch******************************************",
+                    "Directos de lunes a viernes***********************************",
+                    "/icons/twitch-brands.svg",
+                    const.TWITCH_URL),
+        link_button("YouTube",
+                    "Tutoriales semanales",
+                    "/icons/twitch-brands.svg",
+                    const.YOUTUBE_URL),
+        link_button("YouTube"
+                    "(canal secundario)",
+                    "Tutoriales semanales",
+                    "/icons/twitch-brands.svg",
+                    const.YOUTUBE_SECONDARY_URL),
+        link_button("Discord",
+                    "El chat de la comunidad",
+                    "/icons/twitch-brands.svg",
+                    const.DISCORD_URL),
+
+        # rx.cond(
+        #     len(feature) > 0,
+        #     rx.vstack(
+        #         title("Destacado"),
+        #         rx.foreach(
+        #             feature,
+        #             lambda item: rx.grid(
+        #                 rx.link(
+        #                     rx.image(
+        #                         src=item["image"]
+        #                     ),
+        #                     rx.text(
+        #                         item["title"]
+        #                     ),
+        #                     href=item["url"],
+        #                     is_external=True
+        #                 )
+        #             )
+        #         )
+        #     )
+        # ),
+
 
         title("Recursos y mas"),
         link_button("Twitch",
@@ -53,10 +79,10 @@ def index_links()-> rx.Component:
                     "https://discord.gg/mouredev"),
         # width="100%",
 
-            width="100%",
-            spacing=Size.MEDIUM.value
-            # align_items="center",
-            # justify_content="center"
+        width="100%",
+        spacing=Size.MEDIUM.value
+        # align_items="center",
+        # justify_content="center"
 
 
     )

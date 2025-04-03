@@ -4,3 +4,4 @@
 .states
 assets/external/
 __pycache__/
+.env

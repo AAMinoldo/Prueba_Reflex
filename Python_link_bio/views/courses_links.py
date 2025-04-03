@@ -1,4 +1,6 @@
 import reflex as rx
+from pygments import highlight
+
 from Python_link_bio.components.link_button import link_button
 from Python_link_bio.components.title import title
 from Python_link_bio.styles.styles import Size

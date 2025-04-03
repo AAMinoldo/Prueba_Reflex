@@ -1,5 +1,5 @@
 import reflex as rx
-
+from Python_link_bio.components.link_button import link_button
 from Python_link_bio.components.link_icon import link_icon
 from Python_link_bio.components.info_text import info_text
 from Python_link_bio.styles.styles import Size
@@ -8,11 +8,28 @@ from Python_link_bio.styles.colors import Color
 import Python_link_bio.constants as const
 
 
-def header(details=True) -> rx.Component:
+def header(details=True, live=False, live_title="") -> rx.Component:
     return rx.vstack(
         rx.hstack(
-            rx.avatar(fallback="AM",
-                      size=Size.BIG.value,
+            rx.avatar(
+                rx.cond(
+                    live,
+                    rx.link(
+                    rx.avatar(
+                        rx.image(
+                          src="/icons/twitch.svg"
+                        ),
+                        # box_size=Size.MEDIUM.value,
+                        bg=Color.PURPLE.value,
+                        border_color=Color.PURPLE.value,
+                        class_name="blink"
+                    ),
+                      href=const.TWITCH_URL,
+                        is_external=True
+                )
+                ),
+                fallback="AM",
+                      size=Size.SMALL.value,
                       src="/236.jpg",
                       radius="full",
                       bg=Color.CONTENT.value,
@@ -65,7 +82,16 @@ def header(details=True) -> rx.Component:
                     # info_text("+13", "años de experiencia"),
                     width="100%"
                 ),
-
+                rx.cond(
+                  live,
+                    link_button(
+                        "En directo",
+                        live_title,
+                        "/icons/twithc.svg",
+                        const.TWITCH_URL,
+                        highlight_color=Color.PURPLE.value,
+                    )
+                ),
                 rx.text(f"""
         Desarrollador de software del Instituto Politecnico Cordoba""",
                         color=TextColor.BODY.value,
