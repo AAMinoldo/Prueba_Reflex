@@ -28,7 +28,12 @@ jobs:
             python-version: '3.13.2' 
             
       - name: Run build script
-        run: python ./Python_link_bio/build_remoto.ps1
+        run: |
+          # (chmod +x) para hacer el archivo ejecutable 
+          chmod +x ./Python_link_bio/build_remoto.ps1   
+        
+          # el segundo (./Python_link_bio/build_remoto.ps1) para ejecutarlo
+          ./Python_link_bio/build_remoto.ps1
 
       - name: Pull changes to ensure up-to-date with remote
         run: git pull origin main --rebase  # Esto sincroniza tu rama local con la remota
